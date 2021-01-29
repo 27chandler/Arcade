@@ -36,17 +36,19 @@ public class PlayerManager : Singleton<PlayerManager>
                 PlayerRegister player_register = _playerQueue[i].GetComponent<PlayerRegister>();
                 if (i != _activeIndex)
                 {
-                    foreach (var controllable in player_register.GetComponentsInChildren<IControllable>())
-                    {
-                        controllable.FreezeControls();
-                    }
+                    player_register.FreezeControls();
+                    //foreach (var controllable in player_register.GetComponentsInChildren<IControllable>())
+                    //{
+                    //    controllable.FreezeControls();
+                    //}
                 }
                 else
                 {
-                    foreach (var controllable in player_register.GetComponentsInChildren<IControllable>())
-                    {
-                        controllable.UnFreezeControls();
-                    }
+                    player_register.UnFreezeControls();
+                    //foreach (var controllable in player_register.GetComponentsInChildren<IControllable>())
+                    //{
+                    //    controllable.UnFreezeControls();
+                    //}
                 }
             }
         }

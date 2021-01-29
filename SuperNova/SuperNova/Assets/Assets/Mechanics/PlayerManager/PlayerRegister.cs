@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerRegister : MonoBehaviour
 {
-    [SerializeField] private PlayerInput _input;
+    [SerializeField] private Camera _cam;
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -19,11 +19,19 @@ public class PlayerRegister : MonoBehaviour
 
     public void FreezeControls()
     {
-        _input.enabled = false;
+        foreach (var controllable in gameObject.GetComponentsInChildren<IControllable>())
+        {
+            controllable.FreezeControls();
+        }
+        _cam.enabled = false;
     }
 
     public void UnFreezeControls()
     {
-        _input.enabled = true;
+        foreach (var controllable in gameObject.GetComponentsInChildren<IControllable>())
+        {
+            controllable.UnFreezeControls();
+        }
+        _cam.enabled = true;
     }
 }
