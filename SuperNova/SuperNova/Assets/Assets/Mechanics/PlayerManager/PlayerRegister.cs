@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerRegister : MonoBehaviour
 {
-    [SerializeField] private InputMovement _input;
+    [SerializeField] private PlayerInput _input;
     // Start is called before the first frame update
     void OnEnable()
     {

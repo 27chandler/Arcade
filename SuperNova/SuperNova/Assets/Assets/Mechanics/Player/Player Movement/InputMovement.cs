@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputMovement : MonoBehaviour, IControllable
+public class InputMovement : PlayerInput, IControllable
 {
     [SerializeField] private float _movementSpeed = 1.0f;
     [SerializeField] private CharacterController _controller;

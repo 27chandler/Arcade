@@ -24,12 +24,7 @@ public class BallMovement : MonoBehaviour
         //_movementDirection *= collision.GetContact(0).normal;
         //BounceObject bounce_surface = collision.gameObject.GetComponent<BounceObject>();
 
-        Debug.Log("Input direction: " + _movementDirection);
-        Debug.Log("Input normal: " + collision.GetContact(0).normal);
-        Debug.Log("Converted normal: " + collision.GetContact(0).thisCollider.transform.InverseTransformDirection(collision.GetContact(0).normal));
-
         _movementDirection = Vector3.Reflect(_movementDirection, transform.parent.InverseTransformDirection(collision.GetContact(0).normal));
-        Debug.Log("Reflected direction: " + _movementDirection);
         //_movementDirection = transform.InverseTransformDirection(_movementDirection);
         //Debug.Log("Converted direction: " + _movementDirection);
         //_movementDirection.z = 0.0f;

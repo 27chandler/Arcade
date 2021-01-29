@@ -7,6 +7,7 @@ public class FocusInteraction : Interaction,  IControllable
     [SerializeField] private bool _isActive = false;
     [Space]
     [SerializeField] private Transform _focusTransform;
+    [SerializeField] private PlayerRegister _focusRegister;
 
     private bool _areControlsLocked = false;
 
@@ -24,6 +25,7 @@ public class FocusInteraction : Interaction,  IControllable
     {
         if (!_areControlsLocked)
         {
+            _focusRegister.enabled = true;
             if (!_isActive)
                 StartCoroutine(SlidePlayer(player_interactor));
 
@@ -58,6 +60,7 @@ public class FocusInteraction : Interaction,  IControllable
 
     private void CancelFocus()
     {
+        _focusRegister.enabled = false;
         _isActive = false;
     }
 
