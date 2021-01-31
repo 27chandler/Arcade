@@ -5,6 +5,7 @@ using UnityEngine;
 public class PongControls : PlayerInput, IControllable
 {
     [SerializeField] private bool _areControlsLocked;
+    [SerializeField] private float _moveSpeed;
     [SerializeField] private float _borderTop, _borderBottom;
 
     void Start()
@@ -33,7 +34,7 @@ public class PongControls : PlayerInput, IControllable
                 return;
             }
 
-            transform.localPosition += movement * Time.deltaTime;
+            transform.localPosition += movement * _moveSpeed * Time.deltaTime;
         }
     }
 

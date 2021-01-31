@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5360101521363056427}
   - component: {fileID: 5383381694392760605}
   - component: {fileID: 3287106005023983241}
+  - component: {fileID: 1410433199583828307}
   m_Layer: 0
   m_Name: RightPaddle
   m_TagString: Untagged
@@ -93,6 +94,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1410433199583828307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553325768367324637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95cc15e167e61574e83e52e81ddc8387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ball: {fileID: 4178933716871230586}
+  _moveSpeed: 1
+  _borderTop: 0.085
+  _borderBottom: -0.085
+  _moveBuffer: 0.05
 --- !u!1 &2789990305754037320
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _areControlsLocked: 1
+  _moveSpeed: 1
   _borderTop: 0.085
   _borderBottom: -0.085
 --- !u!1 &5246717039597773604
@@ -755,7 +774,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad009c33de73aa4b866490aca6e47d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 0.1
+  _movementSpeed: 0.07
+  _bounceIncrement: 0.005
 --- !u!54 &5872042227283720559
 Rigidbody:
   m_ObjectHideFlags: 0
