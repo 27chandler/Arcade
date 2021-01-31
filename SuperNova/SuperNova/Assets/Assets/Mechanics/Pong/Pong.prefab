@@ -107,10 +107,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ball: {fileID: 4178933716871230586}
-  _moveSpeed: 1
+  _moveSpeed: 0.2
   _borderTop: 0.085
   _borderBottom: -0.085
-  _moveBuffer: 0.05
+  _moveBuffer: 0.02
+  _acceleration: 0.1
 --- !u!1 &2789990305754037320
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 0.07
   _bounceIncrement: 0.005
+  _maxBounceIncrements: 60
 --- !u!54 &5872042227283720559
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -789,7 +791,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 2
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &9126146854446917201

@@ -6,6 +6,7 @@ public class BallMovement : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed;
     [SerializeField] private float _bounceIncrement;
+    [SerializeField] private int _maxBounceIncrements;
 
     private Vector3 _movementDirection = new Vector3(1.0f, 1.0f,0.0f);
     private int _bounceCount = 0;
@@ -24,6 +25,10 @@ public class BallMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         _movementDirection = Vector3.Reflect(_movementDirection, transform.parent.InverseTransformDirection(collision.GetContact(0).normal));
-        _bounceCount++;
+
+        if (_bounceCount < _maxBounceIncrements)
+        {
+            _bounceCount++;
+        }
     }
 }
