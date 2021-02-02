@@ -52,4 +52,14 @@ public class ScoreSystem : MonoBehaviour
             score.TextReference.text = score.ScoreValue.ToString();
         }
     }
+
+    public void ResetScores()
+    {
+        foreach (var score in _scores)
+        {
+            score.ScoreValue = 0;
+        }
+
+        UpdateTextValues();
+    }
 }

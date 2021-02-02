@@ -16,10 +16,11 @@ public class PlayerManager : Singleton<PlayerManager>
     public void UnRegisterPlayer(GameObject player)
     {
         PlayerRegister player_register = player.GetComponent<PlayerRegister>();
-        foreach (var controllable in player_register.GetComponentsInChildren<IControllable>())
-        {
-            controllable.FreezeControls();
-        }
+        player_register.FreezeControls();
+        //foreach (var controllable in player_register.GetComponentsInChildren<IControllable>())
+        //{
+        //    controllable.FreezeControls();
+        //}
 
         _playerQueue.Remove(player);
     }
