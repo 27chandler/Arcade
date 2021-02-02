@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 8048748530639609819}
   - component: {fileID: 1435943880792882009}
   - component: {fileID: 9004241818762145848}
+  - component: {fileID: 352127925465947088}
   m_Layer: 0
   m_Name: RightGoal
   m_TagString: Untagged
@@ -398,6 +399,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8769141, y: 0.9999999, z: 1}
   m_Center: {x: 0.061542924, y: 0, z: 0}
+--- !u!114 &352127925465947088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3308028953543657207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c7eaa539333e8409cbcaef27e36bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreIncrement: 1
+  _scoreID: 0
 --- !u!1 &3484552663416433774
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +565,7 @@ GameObject:
   - component: {fileID: 2636601512654562827}
   - component: {fileID: 5197579167502193524}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: RightScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -706,7 +721,7 @@ GameObject:
   - component: {fileID: 3280304501470919681}
   - component: {fileID: 1389307240795784381}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: LeftScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -862,6 +877,7 @@ GameObject:
   - component: {fileID: 3439844792010416524}
   - component: {fileID: 4954541819376907090}
   - component: {fileID: 1870957568668988685}
+  - component: {fileID: 5684535319287921392}
   m_Layer: 0
   m_Name: LeftGoal
   m_TagString: Untagged
@@ -943,6 +959,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.84666175, y: 0.9999999, z: 1}
   m_Center: {x: -0.07666908, y: 0, z: 0}
+--- !u!114 &5684535319287921392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5246717039597773604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c7eaa539333e8409cbcaef27e36bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreIncrement: 1
+  _scoreID: 1
 --- !u!1 &5427236932558905150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1250,7 @@ MonoBehaviour:
   _movementSpeed: 0.07
   _bounceIncrement: 0.005
   _maxBounceIncrements: 60
+  _ballResetFreezeTime: 1
 --- !u!54 &5872042227283720559
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1246,6 +1277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8998071239066717904}
   - component: {fileID: 101913451845691927}
+  - component: {fileID: 1755812494717562136}
   m_Layer: 0
   m_Name: Pong
   m_TagString: Untagged
@@ -1290,3 +1322,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cam: {fileID: 5323306421856683485}
+--- !u!114 &1755812494717562136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9126146854446917201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9afbb3143cf3cbd4f97035c4f344c964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ball: {fileID: 7178203394153261108}
+  _scores:
+  - Name: LeftScore
+    TextReference: {fileID: 1389307240795784381}
+    ScoreValue: 0
+  - Name: RightScore
+    TextReference: {fileID: 5197579167502193524}
+    ScoreValue: 0
