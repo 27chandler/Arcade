@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class FocusInteraction : Interaction,  IControllable
+public class FocusInteraction : Interaction//,  IControllable
 {
     [SerializeField] private bool _isActive = false;
     [Space]
     [SerializeField] private PlayerRegister _focusRegister;
     [SerializeField] private UnityEvent _activateEvent;
 
-    private bool _areControlsLocked = false;
+    //private bool _areControlsLocked = false;
 
     void Start()
     {
@@ -24,12 +24,12 @@ public class FocusInteraction : Interaction,  IControllable
 
     public override void ActivateInteraction(PlayerInteract player_interactor)
     {
-        if (!_areControlsLocked)
-        {
+        //if (!_areControlsLocked)
+        //{
             _focusRegister.enabled = true;
             _isActive = true;
             _activateEvent.Invoke();
-        }
+        //}
     }
 
     private void CancelFocus()
@@ -38,14 +38,14 @@ public class FocusInteraction : Interaction,  IControllable
         _isActive = false;
     }
 
-    void IControllable.FreezeControls()
-    {
-        _areControlsLocked = true;
-        CancelFocus();
-    }
+    //void IControllable.FreezeControls()
+    //{
+    //    _areControlsLocked = true;
+    //    CancelFocus();
+    //}
 
-    void IControllable.UnFreezeControls()
-    {
-        _areControlsLocked = false;
-    }
+    //void IControllable.UnFreezeControls()
+    //{
+    //    _areControlsLocked = false;
+    //}
 }
