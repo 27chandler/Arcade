@@ -16,7 +16,14 @@ public class InputManager : Singleton<InputManager>
 
     public event Action _onReturn;
 
+    public event Action _onFire;
+
     public event Action<Vector2> _onMove;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     // Update is called once per frame
     void Update()
@@ -48,6 +55,11 @@ public class InputManager : Singleton<InputManager>
         if (Input.GetButtonDown("Cancel"))
         {
             Return();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Fire();
         }
 
         if (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f)
@@ -90,6 +102,14 @@ public class InputManager : Singleton<InputManager>
         if (_onJump != null)
         {
             _onJump();
+        }
+    }
+
+    public void Fire()
+    {
+        if (_onFire != null)
+        {
+            _onFire();
         }
     }
 
