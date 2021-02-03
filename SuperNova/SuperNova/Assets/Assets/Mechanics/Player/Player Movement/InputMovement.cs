@@ -14,11 +14,11 @@ public class InputMovement : PlayerInput, IControllable
     [SerializeField] private float _speed = 12.0f;
     [SerializeField] private float _gravity = -9.81f;
     [SerializeField] private float _jumpheight = 3.0f;
+    [SerializeField] private bool _areControlsLocked = false;
 
     private Vector3 _velocity;
     private bool _isGrounded;
 
-    private bool _areControlsLocked = false;
 
     void Start()
     {
