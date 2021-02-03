@@ -6,7 +6,8 @@ public class PongControls : PlayerInput, IControllable
 {
     [SerializeField] private bool _areControlsLocked;
     [SerializeField] private float _moveSpeed;
-    [SerializeField] private float _borderTop, _borderBottom;
+    [SerializeField] private float _borderTop, _borderBottom, _borderLeft, _borderRight;
+    [SerializeField] private bool _canMoveHorizontal = false, _canMoveVertical = true;
 
     void Start()
     {
@@ -23,13 +24,24 @@ public class PongControls : PlayerInput, IControllable
         if (!_areControlsLocked)
         {
             Vector3 movement = new Vector3();
-            movement.y = movement_direction.y;
+            if (_canMoveVertical)
+                movement.y = movement_direction.y;
+            if (_canMoveHorizontal)
+                movement.x = movement_direction.x;
 
             if ((movement.y > 0.0f) && (transform.localPosition.y >= _borderTop))
             {
                 return;
             }
             if ((movement.y < 0.0f) && (transform.localPosition.y <= _borderBottom))
+            {
+                return;
+            }
+            if ((movement.x > 0.0f) && (transform.localPosition.x >= _borderRight))
+            {
+                return;
+            }
+            if ((movement.x < 0.0f) && (transform.localPosition.x <= _borderLeft))
             {
                 return;
             }

@@ -8,6 +8,8 @@ public class ScoreSystem : MonoBehaviour
 {
     [SerializeField] private BallMovement _ball;
     [SerializeField] private List<Score> _scores = new List<Score>();
+    [Space]
+    [SerializeField] private bool _doResetOnScore = true;
 
     [Serializable]
     public class Score
@@ -23,7 +25,8 @@ public class ScoreSystem : MonoBehaviour
         {
             _scores[id].ScoreValue += score;
             UpdateTextValues();
-            _ball.ResetBall();
+            if (_doResetOnScore)
+                _ball.ResetBall();
         }
         else
         {
@@ -37,7 +40,8 @@ public class ScoreSystem : MonoBehaviour
         {
             _scores[id].ScoreValue = score;
             UpdateTextValues();
-            _ball.ResetBall();
+            if (_doResetOnScore)
+                _ball.ResetBall();
         }
         else
         {
