@@ -8,6 +8,8 @@ public class ObjectUseInteraction : Interaction
     [SerializeField] private Collider _collider;
     [SerializeField] private Vector3 _holdOffset;
 
+    [SerializeField] private List<PlayerInput> _objectHeldActions = new List<PlayerInput>();
+
     private Transform _holder;
 
     private bool _isHeld = false;
@@ -15,6 +17,11 @@ public class ObjectUseInteraction : Interaction
     void Start()
     {
         InputManager.Instance._onReturn += DropItem;
+
+        foreach (var input in _objectHeldActions)
+        {
+            input.enabled = false;
+        }
     }
 
     private void OnDestroy()
@@ -40,6 +47,11 @@ public class ObjectUseInteraction : Interaction
         _collider.enabled = false;
         _rb.useGravity = false;
 
+        foreach (var input in _objectHeldActions)
+        {
+            input.enabled = true;
+        }
+
         _isHeld = true;
     }
 
@@ -48,6 +60,11 @@ public class ObjectUseInteraction : Interaction
         _collider.enabled = true;
         _rb.useGravity = true;
         _rb.transform.parent = null;
+
+        foreach (var input in _objectHeldActions)
+        {
+            input.enabled = false;
+        }
 
         _isHeld = false;
     }
