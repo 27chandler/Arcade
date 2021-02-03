@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _acceleration: 1000
   _turnSpeed: 100
-  _groundCheckDistance: 0.4
+  _groundCheckDistance: 0.2
   _inAirDrag: 0.01
   _carRb: {fileID: 5182117106422307121}
   _groundCheck: {fileID: 7178010236519936753}
@@ -277,7 +277,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5182117106422307121
 Rigidbody:
@@ -340,7 +340,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1cb477a7f76f06c4784a1c69a934284a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.177
+      value: -0.095
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cb477a7f76f06c4784a1c69a934284a,
         type: 3}
