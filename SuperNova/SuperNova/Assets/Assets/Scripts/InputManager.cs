@@ -18,6 +18,8 @@ public class InputManager : Singleton<InputManager>
 
     public event Action _onFire;
 
+    public event Action _onSecondaryFire;
+
     public event Action<Vector2> _onMove;
 
     private void Start()
@@ -60,6 +62,11 @@ public class InputManager : Singleton<InputManager>
         if (Input.GetMouseButtonDown(0))
         {
             Fire();
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            SecondaryFire();
         }
 
         if (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f)
@@ -110,6 +117,14 @@ public class InputManager : Singleton<InputManager>
         if (_onFire != null)
         {
             _onFire();
+        }
+    }
+
+    private void SecondaryFire()
+    {
+        if (_onSecondaryFire != null)
+        {
+            _onSecondaryFire();
         }
     }
 
