@@ -39,9 +39,9 @@ public class BlockInteract : MonoBehaviour, IControllable
             {
                 Vector3 block_position = new Vector3();
                 block_position = hit.point + (hit.normal * 0.1f);
-                block_position = new Vector3(Mathf.Round(block_position.x / _gridSize.x),
+                block_position = (new Vector3(Mathf.Round(block_position.x / _gridSize.x),
                               Mathf.Round(block_position.y / _gridSize.y),
-                              Mathf.Round(block_position.z / _gridSize.z)) * _gridSize.x;
+                              Mathf.Round(block_position.z / _gridSize.z)) * _gridSize.x);
 
                 Instantiate(_placeBlock, block_position, new Quaternion());
             }
