@@ -9,6 +9,7 @@ public class InputManager : Singleton<InputManager>
     public event Action _onRotateObjectInverted;
 
     public event Action _onJump;
+    public event Action _onJumpHold;
 
     public event Action _onInteract;
 
@@ -42,6 +43,10 @@ public class InputManager : Singleton<InputManager>
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
+        }
+        if (Input.GetButton("Jump"))
+        {
+            JumpHold();
         }
 
         if (Input.GetButtonDown("Grab"))
@@ -109,6 +114,14 @@ public class InputManager : Singleton<InputManager>
         if (_onJump != null)
         {
             _onJump();
+        }
+    }
+
+    public void JumpHold()
+    {
+        if (_onJumpHold != null)
+        {
+            _onJumpHold();
         }
     }
 
