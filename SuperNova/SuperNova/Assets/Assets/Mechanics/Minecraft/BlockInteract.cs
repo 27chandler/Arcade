@@ -8,7 +8,7 @@ public class BlockInteract : MonoBehaviour, IControllable
     [SerializeField] private GameObject _placeBlock;
     [SerializeField] private Vector3 _gridSize;
 
-    private bool _areControlsLocked = false;
+    [SerializeField] private bool _areControlsLocked = false;
 
     void Start()
     {
@@ -22,11 +22,6 @@ public class BlockInteract : MonoBehaviour, IControllable
         InputManager.Instance._onSecondaryFire -= DestroyBlock;
     }
 
-    void Update()
-    {
-
-    }
-
     private void PlaceBlock()
     {
         if (!_areControlsLocked)
@@ -38,7 +33,7 @@ public class BlockInteract : MonoBehaviour, IControllable
             if (hit.collider != null)
             {
                 Vector3 block_position = new Vector3();
-                block_position = hit.point + (hit.normal * 0.1f);
+                block_position = hit.point + (hit.normal * 0.01f);
                 block_position = (new Vector3(Mathf.Round(block_position.x / _gridSize.x),
                               Mathf.Round(block_position.y / _gridSize.y),
                               Mathf.Round(block_position.z / _gridSize.z)) * _gridSize.x);
@@ -61,7 +56,7 @@ public class BlockInteract : MonoBehaviour, IControllable
                 Mineable mineable = hit.collider.gameObject.GetComponent<Mineable>();
                 if (mineable != null)
                 {
-                    Destroy(hit.collider.gameObject);
+                    Destroy(hit.collider.transform.parent.gameObject);
                 }
             }
         }

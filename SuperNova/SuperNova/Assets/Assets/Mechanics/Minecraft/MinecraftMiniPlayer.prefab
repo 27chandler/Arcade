@@ -139,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 7383319344928147788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.907, y: 1.823, z: 20.695}
-  m_LocalScale: {x: 0.18584, y: 0.18584, z: 0.18584}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children:
   - {fileID: 7383319343975028665}
   - {fileID: 7383319345185819042}
@@ -161,7 +161,7 @@ CharacterController:
   m_Height: 3
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.1
+  m_StepOffset: 0.001
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -177,16 +177,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d740746e1b20fc74fa4a7ea2553b5f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 2
+  _movementSpeed: 0.5
   _controller: {fileID: 7383319344928147790}
   _groundCheck: {fileID: 7383319343334343222}
-  _groundDistance: 0.1
+  _groundDistance: 0.01
   _groundMask:
     serializedVersion: 2
     m_Bits: 1
-  _speed: 12
-  _gravity: -9.81
-  _jumpheight: 2
+  _gravity: -1
+  _jumpheight: 3.5
   _areControlsLocked: 1
 --- !u!114 &7866410150051907514
 MonoBehaviour:
@@ -212,8 +211,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.548483, y: 3.5057917, z: 2.051485}
-  m_Center: {x: 0.09702587, y: 0.108175755, z: -0.11132145}
+  m_Size: {x: 11.982918, y: 9.632364, z: 8.226395}
+  m_Center: {x: 1.1678457, y: 0.8320767, z: -0.2811432}
 --- !u!114 &7866410149609943823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,7 +289,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 6.907, y: 1.9489994, z: 21.066679}
+  m_ConnectedAnchor: {x: 6.907, y: 1.83656, z: 20.735}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -617,4 +616,5 @@ MonoBehaviour:
   _interactDistance: 3
   _placeBlock: {fileID: 9083887711010661139, guid: 743e2edc5c5731340a972e070bde989a,
     type: 3}
-  _gridSize: {x: 0.5, y: 0.5, z: 0.5}
+  _gridSize: {x: 0.1, y: 0.1, z: 0.1}
+  _areControlsLocked: 1
