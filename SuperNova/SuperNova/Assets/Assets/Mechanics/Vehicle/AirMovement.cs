@@ -32,7 +32,8 @@ public class AirMovement : PlayerInput, IControllable
         {
             _balloonRb.AddForce(transform.forward * movement_direction.y * _thrust * Time.deltaTime);
 
-            _balloonRb.AddTorque(transform.up * movement_direction.x * _turnPower * Time.deltaTime);
+            //_balloonRb.AddTorque(transform.up * movement_direction.x * _turnPower * Time.deltaTime);
+            _balloonRb.rotation = Quaternion.Euler(new Vector3(0.0f, _balloonRb.rotation.eulerAngles.y + (movement_direction.x * _turnPower * Time.deltaTime), 0.0f));
         }
     }
 
