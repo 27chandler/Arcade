@@ -29,7 +29,7 @@ public class InputManager : Singleton<InputManager>
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetButton("RotateObject"))
         {

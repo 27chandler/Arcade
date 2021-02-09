@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 719006739408624910}
   - component: {fileID: 2734853548436881927}
   - component: {fileID: 6534412628022321786}
+  - component: {fileID: 8742593447820770867}
   m_Layer: 0
   m_Name: RemoteControlAirshipCamera
   m_TagString: Untagged
@@ -503,32 +504,22 @@ MonoBehaviour:
       data1: 0
       data2: 0
   defaultFrameSettings: 0
---- !u!65 &3776680289341471498
-BoxCollider:
+--- !u!54 &8742593447820770867
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344710132580732615}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_GameObject: {fileID: 189962022420722207}
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 0.5007401, z: 3.0649998}
-  m_Center: {x: 0, y: 0.25037006, z: 0.9674996}
---- !u!65 &6090459237340262440
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344710132580732615}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.08302122, y: 0.6063023, z: 3.0649998}
-  m_Center: {x: -0.45848945, y: 0.30315116, z: 0.9674996}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &2491692461128913939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -542,6 +533,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08302122, y: 0.6063023, z: 3.0649998}
   m_Center: {x: 0.4584894, y: 0.30315116, z: 0.9674996}
+--- !u!65 &3776680289341471498
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344710132580732615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 0.5007401, z: 3.0649998}
+  m_Center: {x: 0, y: 0.25037006, z: 0.9674996}
 --- !u!65 &4309043693733328908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -555,6 +559,81 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.99999994, y: 0.71874326, z: 0.3577085}
   m_Center: {x: 0, y: 0.35937163, z: -0.3861469}
+--- !u!65 &6090459237340262440
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344710132580732615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08302122, y: 0.6063023, z: 3.0649998}
+  m_Center: {x: -0.45848945, y: 0.30315116, z: 0.9674996}
+--- !u!1 &1676910741851847042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 331670529312453398}
+  - component: {fileID: 3658006066496054959}
+  - component: {fileID: 6102375258611723271}
+  m_Layer: 0
+  m_Name: Interactor (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &331670529312453398
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676910741851847042}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1367919017684027765}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3658006066496054959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676910741851847042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e48378d167cc441b5a72471b46b9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isActive: 0
+  _focusRegister: {fileID: 2598733485688496353}
+  _activateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &6102375258611723271
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676910741851847042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08782843, y: 0.08547521, z: 0.07031143}
+  m_Center: {x: -0.0244956, y: -0.3421722, z: 0.24013972}
 --- !u!1 &3036143012931059955
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,8 +778,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1367919017684027765}
   - component: {fileID: 2598733485688496353}
-  - component: {fileID: 7004499126909559745}
   - component: {fileID: 4768093369977413198}
+  - component: {fileID: 4945793482129534301}
+  - component: {fileID: 1333449742610070188}
+  - component: {fileID: 5363953466764285571}
+  - component: {fileID: 5430792426309815764}
   m_Layer: 0
   m_Name: RemoteControlAirship
   m_TagString: Untagged
@@ -723,6 +805,7 @@ Transform:
   - {fileID: 592197531390250266}
   - {fileID: 1829430168051768667}
   - {fileID: 6074369692773885284}
+  - {fileID: 331670529312453398}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -739,23 +822,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cam: {fileID: 9085085214726807064}
---- !u!114 &7004499126909559745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532035009783087670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36071f4c7b000f743af3f37318ec0010, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _balloonRb: {fileID: 4768093369977413198}
-  _thrust: 1000
-  _turnPower: 30
-  _risePower: 500
-  _descentStrength: 10
 --- !u!54 &4768093369977413198
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -772,6 +838,65 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &4945793482129534301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532035009783087670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c716b887a3b3b49a8233cc559f5598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _acceleration: 1000
+  _carRb: {fileID: 4768093369977413198}
+  _doesMoveInAir: 1
+  _groundCheck: {fileID: 0}
+--- !u!114 &1333449742610070188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532035009783087670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178abadfc31418541a2238ac039a218e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _turnSpeed: 100
+  _doesMoveInAir: 1
+  _groundCheck: {fileID: 0}
+--- !u!114 &5363953466764285571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532035009783087670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008c03d07a582b4fb4a92db819e40e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thrust: 500
+  _objectRb: {fileID: 4768093369977413198}
+--- !u!114 &5430792426309815764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532035009783087670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8415b3738729c214487afa4772cf4ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gravityDirection: {x: 0, y: -1, z: 0}
+  _gravityStrength: 10
 --- !u!1 &9122759058289104402
 GameObject:
   m_ObjectHideFlags: 0

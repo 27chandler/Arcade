@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private float _followDistance;
     [SerializeField] private float _followHeight;
     [SerializeField] private Transform _followTarget;
 
+    private Rigidbody _rb;
     private float _zoomDistance;
     private Vector3 _setPosition;
     // Start is called before the first frame update
     void Start()
     {
+        _rb = GetComponent<Rigidbody>();
         transform.SetParent(null);
     }
 
@@ -44,6 +47,6 @@ public class CameraFollow : MonoBehaviour
             _setPosition = hit.point + (Vector3.up * _followHeight) + (_followTarget.forward * 0.5f);
         }
 
-        transform.position = Vector3.Lerp(transform.position, _setPosition, 0.1f);
+        _rb.position = Vector3.Lerp(_rb.position, _setPosition, 0.1f);
     }
 }

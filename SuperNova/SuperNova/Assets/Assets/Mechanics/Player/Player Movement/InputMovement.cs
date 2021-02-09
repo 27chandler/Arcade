@@ -35,9 +35,18 @@ public class InputMovement : PlayerInput, IControllable
     {
         _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
 
-        if (_isGrounded && _velocity.y < 0.0f)
+        if (_isGrounded)
         {
-            _velocity.y = -2.0f;
+            Collider[] ground_colliders = Physics.OverlapSphere(_groundCheck.position, _groundDistance, _groundMask);
+            Rigidbody ground_rb = ground_colliders[0].GetComponent<Rigidbody>();
+
+            if (ground_rb != null)
+                _controller.Move(ground_rb.velocity * Time.deltaTime);
+
+            if (_velocity.y < 0.0f)
+            {
+                _velocity.y = -2.0f;
+            }
         }
 
         _velocity.y += _gravity * Time.deltaTime;

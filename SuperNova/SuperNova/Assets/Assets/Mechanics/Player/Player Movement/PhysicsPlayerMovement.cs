@@ -7,6 +7,8 @@ public class PhysicsPlayerMovement : PlayerInput, IControllable
     [SerializeField] private Rigidbody _playerRb;
     [SerializeField] private bool _areControlsLocked = true;
     [SerializeField] private float _movementSpeed, _jumpStrength;
+    [Space]
+    [SerializeField] private GroundedCheck _groundCheck;
 
     void Start()
     {
@@ -29,13 +31,13 @@ public class PhysicsPlayerMovement : PlayerInput, IControllable
             position_delta += (transform.right * Input.GetAxis("Horizontal")) * _movementSpeed * Time.deltaTime;
             position_delta += (transform.forward * Input.GetAxis("Vertical")) * _movementSpeed * Time.deltaTime;
 
-            _playerRb.AddForce(position_delta);
+            _playerRb.position += position_delta;
         }
     }
 
     private void Jump()
     {
-        if (!_areControlsLocked)
+        if (!_areControlsLocked && _groundCheck._isGrounded)
             _playerRb.AddForce(transform.up * _jumpStrength);
     }
 

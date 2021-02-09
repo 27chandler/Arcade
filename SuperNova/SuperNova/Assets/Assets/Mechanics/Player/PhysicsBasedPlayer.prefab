@@ -105,7 +105,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7086148095831201489}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -121,7 +121,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -484,8 +484,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerRb: {fileID: 6431204610667486769}
   _areControlsLocked: 1
-  _movementSpeed: 500
+  _movementSpeed: 10
   _jumpStrength: 300
+  _groundCheck: {fileID: 6525901421839718894}
 --- !u!114 &7569079479823849672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,7 +515,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &1874807451907626255
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -538,6 +539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7086148096646749508}
+  - component: {fileID: 6525901421839718894}
   m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -553,12 +555,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7086148096646749509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.58, z: 0}
+  m_LocalPosition: {x: 0, y: -1.508, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7086148096093066803}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6525901421839718894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086148096646749509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae85b646dae046b499ddf7d76b486cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _carRb: {fileID: 6431204610667486769}
+  _groundCheck: {fileID: 7086148096646749508}
+  _groundCheckDistance: 0.1
+  _inAirDrag: 0.1
 --- !u!1 &7086148097010600180
 GameObject:
   m_ObjectHideFlags: 0
