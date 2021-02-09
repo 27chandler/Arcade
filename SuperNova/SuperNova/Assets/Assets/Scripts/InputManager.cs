@@ -28,8 +28,7 @@ public class InputManager : Singleton<InputManager>
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void Update()
     {
         if (Input.GetButton("RotateObject"))
         {
@@ -73,7 +72,11 @@ public class InputManager : Singleton<InputManager>
         {
             SecondaryFire();
         }
+    }
 
+    // Update is called once per frame
+    void FixedUpdate()
+    {
         if (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f)
         {
             Vector2 movement = new Vector2();
