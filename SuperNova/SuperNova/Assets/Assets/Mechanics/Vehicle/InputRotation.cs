@@ -29,7 +29,10 @@ public class InputRotation : PlayerInput, IControllable
 
     private void GroundedOnlyTurn(Vector2 movement_direction)
     {
-
+        if (_groundCheck._isGrounded)
+        {
+            Turn(movement_direction);
+        }
     }
 
     private void Turn(Vector2 movement_direction)

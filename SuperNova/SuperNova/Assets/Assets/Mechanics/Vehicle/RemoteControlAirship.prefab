@@ -783,6 +783,7 @@ GameObject:
   - component: {fileID: 1333449742610070188}
   - component: {fileID: 5363953466764285571}
   - component: {fileID: 5430792426309815764}
+  - component: {fileID: 5745829415343181461}
   m_Layer: 0
   m_Name: RemoteControlAirship
   m_TagString: Untagged
@@ -897,6 +898,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gravityDirection: {x: 0, y: -1, z: 0}
   _gravityStrength: 10
+--- !u!114 &5745829415343181461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532035009783087670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b207f923d953c4b9d7b714c71eaf3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isXRotationLocked: 1
+  _isYRotationLocked: 0
+  _isZRotationLocked: 1
 --- !u!1 &9122759058289104402
 GameObject:
   m_ObjectHideFlags: 0
