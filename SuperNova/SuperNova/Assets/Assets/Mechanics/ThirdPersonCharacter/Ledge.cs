@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+public class Ledge : MonoBehaviour
 {
-    public bool freezeInput = false;
+
 }

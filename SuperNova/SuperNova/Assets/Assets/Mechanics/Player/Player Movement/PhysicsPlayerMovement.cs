@@ -24,7 +24,7 @@ public class PhysicsPlayerMovement : PlayerInput, IControllable
 
     private void Move(Vector2 movement_direction)
     {
-        if (!_areControlsLocked)
+        if (!_areControlsLocked && !freezeInput)
         {
             // The change in position this frame
             Vector3 position_delta = new Vector3();
@@ -37,7 +37,7 @@ public class PhysicsPlayerMovement : PlayerInput, IControllable
 
     private void Jump()
     {
-        if (!_areControlsLocked && _groundCheck._isGrounded)
+        if (!_areControlsLocked && _groundCheck._isGrounded && !freezeInput)
             _playerRb.AddForce(transform.up * _jumpStrength);
     }
 
